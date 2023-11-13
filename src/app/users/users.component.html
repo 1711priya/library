@@ -1,0 +1,40 @@
+
+<!-- UserList -->
+
+
+<div class="all-users">
+    <h2>All Users List</h2>
+    <!-- <p class="p-message">{{message}}</p> -->
+     <!-- {{ allUsers | json }} -->
+    <table class="table table-striped" *ngIf="allUsers">
+        <thead>
+            <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+
+           
+
+            <tr *ngFor="let u of allUsers">
+                <td>{{u.name}}</td>
+                <td>{{u.email}}</td>
+                <td>
+                    <a routerLink="/edit-user/{{u.id}}"><fa-icon [icon]="editIcon"></fa-icon></a>
+                    <a><fa-icon (click)="deleteUser(u.id)" [icon]="deleteIcon"></fa-icon></a>
+                </td> 
+               
+            </tr>
+            
+        </tbody>
+
+    </table>
+    <!-- <button type="button" routerLink="/add-user" class="btn btn-success col-md-3">Add User</button> -->
+
+</div> 
+
+
+
+

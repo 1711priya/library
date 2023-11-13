@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Priyanka",
+      "email": "priyanka@gmail.com",
+      "password": "priyanka@123"
+    },
+    {
+      "id": 2,
+      "name": "Pooja",
+      "email": "pooja@gmail.com",
+      "password": "pooja@123"
+    }
+  ],
+  "books": [
+    {
+      "name": "Test update Django book",
+      "author": "Django",
+      "price": "590",
+      "description": "Django book description",
+      "id": 5
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+
+
+ <div class="all-books">
+    <h2>Welcome to Library Management System</h2>
+
+ <!-- {{allBooks|json}} -->
+
+ {{message}}
+    <table class="table table-striped">
+        <thead>
+          <tr *ngIf="allBooks">
+            <th scope="col">Sr No.</th>
+            <th scope="col">Name</th>
+            <th scope="col">Author</th>
+            <th scope="col">Price</th>
+            <th scope="col">Description</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let b of allBooks">
+            <th scope="row">{{b.id}}</th>
+            <td>{{b.bookName}}</td>
+            <td>{{b.bookAuthor}}</td>
+            <td>{{b.bookPrice}}</td>
+            <td><button>description</button></td>
+            <td><a routerLink="/edit-book/{{b.id}}"><fa-icon [icon]="editIcon"></fa-icon></a>
+                
+                <fa-icon (click)="deleteById(b.id)" [icon]="deleteIcon"></fa-icon></td>
+          </tr>
+      
+        </tbody>
+      </table>
+</div>

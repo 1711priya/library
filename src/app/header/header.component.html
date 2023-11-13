@@ -1,0 +1,74 @@
+<nav class="navbar navbar-expand-xl navbar-light bg-light">
+
+
+    <a class="navbar-brand" routerLink="/">Library Management</a>
+
+    <div [ngSwitch]="menuType">
+        <div *ngSwitchCase="'default'" class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" routerLink="">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" routerLink="view-books">View Books</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" routerLink="admin-login">Admin login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" routerLink="login">User Login/SignUp</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" routerLink="">Cart(0)</a>
+                </li>
+            </ul>
+        </div>
+
+
+        <div *ngSwitchCase="'user'" class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" routerLink="">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" routerLink="view-books">View Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" routerLink="admin-login">Admin Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" routerLink="">{{userName|titlecase}}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" (click)="userLogout()">Logout</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" routerLink="">Cart(0)</a>
+                </li>
+            </ul>
+        </div>
+        <div *ngSwitchCase="'admin'" class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" routerLink="">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" routerLink="view-books">View Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" routerLink="view-users">View Users</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" (click)="adminLogout()">Logout</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" routerLink="">{{adminName|uppercase}}</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+
+
+<p>{{message}}</p>

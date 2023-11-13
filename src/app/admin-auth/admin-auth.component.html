@@ -1,0 +1,23 @@
+
+<div class="container col-md-6 mt-5">
+<div>            <!--Admin Login form-->
+    <form #adminLogin="ngForm" (ngSubmit)="login(adminLogin.value)">
+      
+      <p class="">{{authError}}</p>
+      
+      <h2> Admin Login</h2>
+      
+      <div class="mb-3">
+        <label class="form-label">Email address</label>
+        <input type="email" class="form-control" name="email" ngModel #email="ngModel">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-control" name="password" ngModel #password="ngModel">
+      </div>
+     
+      <button type="submit" class="btn btn-primary">Login</button>
+
+    </form>
+  </div>
+</div>

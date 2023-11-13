@@ -1,0 +1,48 @@
+<div class="container col-md-6 mt-5">   <!--Register form-->
+  <div *ngIf="!showLogin">
+    <form #userSignUp="ngForm" (ngSubmit)="userRegister(userSignUp.value)">
+      <h2>Register Here!</h2>
+      <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input type="text" class="form-control" name="name" ngModel #name="ngModel">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Email address</label>
+        <input type="email" class="form-control" name="email" ngModel #email="ngModel">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-control" name="password" ngModel #password="ngModel">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Confirm Password</label>
+        <input type="password" class="form-control" name="confpassword" ngModel #confpassword="ngModel">
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <p>Already have account? <a (click)="openLogin()">Login</a></p>
+    </form>
+
+  </div>
+
+  <div *ngIf="showLogin">            <!--Login form-->
+    <form #userLogin="ngForm" (ngSubmit)="login(userLogin.value)">
+      
+      <p class="">{{authError}}</p>
+      
+      <h2>Login Here!</h2>
+      
+      <div class="mb-3">
+        <label class="form-label">Email address</label>
+        <input type="email" class="form-control" name="email" ngModel #email="ngModel">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-control" name="password" ngModel #password="ngModel">
+      </div>
+     
+      <button type="submit" class="btn btn-primary">Login</button>
+      <p>Don't have an account? <a (click)="openRegister()">SignUp</a></p>
+    </form>
+  </div>
+</div>

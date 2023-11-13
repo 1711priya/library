@@ -1,0 +1,27 @@
+<div class="container col-md-6 mt-5"> 
+
+        <form #updateBook="ngForm" (ngSubmit)="update(updateBook.value)">
+            <h2>Update Book Details</h2>
+            <!-- {{bookData|json}} -->
+            <div class="mb-3">
+                <label class="form-label">Book Name</label>
+                <input type="text" class="form-control" name="bookName" ngModel="{{bookData?.bookName}}">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Book Author</label>
+                <input type="text" class="form-control" name="bookAuthor" ngModel="{{bookData?.bookAuthor}}">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Book Price</label>
+                <input type="text" class="form-control" name="bookPrice" ngModel="{{bookData?.bookPrice}}">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Book Description</label>
+                <input type="text" class="form-control" name="description" ngModel="{{bookData?.description}}">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Update</button>
+            
+        </form>
+
+</div>
